@@ -237,17 +237,17 @@ def plot_one_box(x, im, color=None, label=None, line_thickness=3, length=None, c
         c2 = c1[0] + t_size[0], c1[1] - t_size[1] - 3
         cv2.rectangle(im, c1, c2, color, -1, cv2.LINE_AA)  # filled
         cv2.putText(im, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
-        cv2.line(im, (x[0], x[1]), (x[0] + length, x[1]), corner_color, thickness=3)
-        cv2.line(im, (x[0], x[1]), (x[0], x[1] + length), corner_color, thickness=3)
+        cv2.line(im, (int(x[0]), int(x[1])), (int(x[0]) + length, int(x[1])), corner_color, thickness=3)
+        cv2.line(im, (int(x[0]), int(x[1])), (int(x[0]), int(x[1]) + length), corner_color, thickness=3)
         # Top Right
-        cv2.line(im, (x[2], x[1]), (x[2] - length, x[1]), corner_color, thickness=3)
-        cv2.line(im, (x[2], x[1]), (x[2], x[1] + length), corner_color, thickness=3)
+        cv2.line(im, (int(x[2]), int(x[1])), (int(x[2]) - length, int(x[1])), corner_color, thickness=3)
+        cv2.line(im, (int(x[2]), int(x[1])), (int(x[2]), int(x[1]) + length), corner_color, thickness=3)
         # Bottom Left
-        cv2.line(im, (x[0], x[3]), (x[0] + length, x[3]), corner_color, thickness=3)
-        cv2.line(im, (x[0], x[3]), (x[0], x[3] - length), corner_color, thickness=3)
+        cv2.line(im, (int(x[0]), int(x[3])), (int(x[0]) + length, int(x[3])), corner_color, thickness=3)
+        cv2.line(im, (int(x[0]), int(x[3])), (int(x[0]), int(x[3]) - length), corner_color, thickness=3)
         # Bottom Right
-        cv2.line(im, (x[2], x[3]), (x[2] - length, x[3]), corner_color, thickness=3)
-        cv2.line(im, (x[2], x[3]), (x[2], x[3] - length), corner_color, thickness=3)
+        cv2.line(im, (int(x[2]), int(x[3])), (int(x[2]) - length, int(x[3])), corner_color, thickness=3)
+        cv2.line(im, (int(x[2]), int(x[3])), (int(x[2]), int(x[3]) - length), corner_color, thickness=3)
 
 
 

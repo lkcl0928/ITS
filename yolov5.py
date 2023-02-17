@@ -83,11 +83,11 @@ class YOLO(object):
                         label1=f'Pedestrian {conf:.2f}'
                         plot_one_box(xyxy, im0, label=label1, color=(78,90,155), line_thickness=3, length=20,
                                      corner_color=(0, 255, 0))
-                    if c==2 or c==5 or c==6 or c== 7:
+                    if c==2:
                         label2 = f'Vehicle {conf:.2f}'
                         plot_one_box(xyxy, im0, label=label2, color=(125,34,56), line_thickness=3, length=20,
                                      corner_color=(0, 255, 0))
-                    if c ==1 or c==3:
+                    if c ==1:
                         label3=f'Cyclist {conf:.2f}'
                         plot_one_box(xyxy, im0, label=label3, color=(34,150,48), line_thickness=3, length=20,
                                      corner_color=(0, 255, 0))

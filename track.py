@@ -63,4 +63,4 @@ class VideoTracker(object):
 
 if __name__ == '__main__':
     vt = VideoTracker()
-    vt.run('your demo path')
+    vt.run('lane.mp4')

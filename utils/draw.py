@@ -14,12 +14,12 @@ def compute_color_for_labels(label):
     return tuple(color)
 
 
-def draw_boxes(img, bbox, identities=None, carSpeed={},offset=(0,0)):
+def draw_boxes(img, bbox, identities=None):
     for i,box in enumerate(bbox):
         x1,y1,x2,y2 = [int(i) for i in box]
         id = int(identities[i]) if identities is not None else 0    
         color = compute_color_for_labels(id)
-        label = 'ID: %d, SPEED: %d KM/h'%(id,carSpeed.get(id,0))
+        label = 'ID: %d' % id
         t_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_PLAIN, 2 , 2)[0]
         cv2.rectangle(img,(x1, y1),(x2,y2),color,3)
         cv2.rectangle(img,(x1, y1),(x1+t_size[0]+3,y1+t_size[1]+4), color,-1)
